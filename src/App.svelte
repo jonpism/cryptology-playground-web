@@ -1,4 +1,5 @@
 <script>
+	import BruteForceAttack from './section_tools_frontend/cryptanalysis_frontend/brute_force_attack.svelte';
   // COMPONENTS
   import Sidebar from './components/Sidebar.svelte';
   import Home from './section_tools_frontend/HomePage.svelte';
@@ -73,6 +74,30 @@
 
   // CRYPTANALYSIS
   import RSA_WIENER_ATTACK from './section_tools_frontend/cryptanalysis_frontend/rsa_wiener_attack.svelte';
+  import DIFFERENTIAL_CRYPTANALYSIS from './section_tools_frontend/cryptanalysis_frontend/differential_cryptanalysis.svelte';
+  import LINEAR_CRYPTANALYSIS from './section_tools_frontend/cryptanalysis_frontend/linear_cryptanalysis.svelte';
+  import BOOMERANG_ATTACK from './section_tools_frontend/cryptanalysis_frontend/boomerang_attack.svelte';
+  import BRUTE_FORCE_ATTACK from './section_tools_frontend/cryptanalysis_frontend/brute_force_attack.svelte';
+  import ADAPTIVE_CHOSEN_PLAINTEXT_ATTACK from './section_tools_frontend/cryptanalysis_frontend/adaptive_chosen_plaintext_attack.svelte';
+  import BIRTHDAY_ATTACK from './section_tools_frontend/cryptanalysis_frontend/birthday_attack.svelte';
+  import BLACK_BAG_CRYPTANALYSIS from './section_tools_frontend/cryptanalysis_frontend/black_bag_cryptanalysis.svelte';
+  import CIPHERTEXT_ONLY_ANALYSIS from './section_tools_frontend/cryptanalysis_frontend/ciphertext_only_analysis.svelte';
+  import CHOSEN_PLAINTEXT_ANALYSIS from './section_tools_frontend/cryptanalysis_frontend/chosen_plaintext_analysis.svelte';
+  import DAVIES_ATTACK from './section_tools_frontend/cryptanalysis_frontend/davies_attack.svelte';
+  import HARVEST_NOW_DECRYPT_LATER from './section_tools_frontend/cryptanalysis_frontend/harvest_now_decrypt_later.svelte';
+  import INTEGRAL_CRYPTANALYSIS from './section_tools_frontend/cryptanalysis_frontend/integral_cryptanalysis.svelte';
+  import KNOWN_PLAINTEXT_ATTACK from './section_tools_frontend/cryptanalysis_frontend/known_plaintext_attack.svelte';
+  import MAN_IN_THE_MIDDLE_ATTACK from './section_tools_frontend/cryptanalysis_frontend/man_in_the_middle_attack.svelte';
+  import MOD_N_CRYPTANALYSIS from './section_tools_frontend/cryptanalysis_frontend/mod_n_cryptanalysis.svelte';
+  import POWER_ANALYSIS from './section_tools_frontend/cryptanalysis_frontend/power_analysis.svelte';
+  import RAINBOW_TABLE_ATTACK from './section_tools_frontend/cryptanalysis_frontend/rainbow_table_attack.svelte';
+  import REPLAY_ATTACK from './section_tools_frontend/cryptanalysis_frontend/replay_attack.svelte';
+  import RELATED_KEY_ATTACK from './section_tools_frontend/cryptanalysis_frontend/related_key_attack.svelte';
+  import RUBBER_HOSE_CRYPTANALYSIS from './section_tools_frontend/cryptanalysis_frontend/rubber_hose_cryptanalysis.svelte';
+  import SIDE_CHANNEL_ATTACK from './section_tools_frontend/cryptanalysis_frontend/side_channel_attack.svelte';
+  import SLIDE_ATTACK from './section_tools_frontend/cryptanalysis_frontend/slide_attack.svelte';
+  import TIMING_ANALYSIS_ATTACK from './section_tools_frontend/cryptanalysis_frontend/timing_analysis_attack.svelte';
+  import XSL_ATTACK from './section_tools_frontend/cryptanalysis_frontend/xsl_attack.svelte';
 
   // OTHER TOOLS
   import HMAC from './section_tools_frontend/other_tools_frontend/hmac.svelte';
@@ -199,9 +224,30 @@
       expanded: false,
       items: [
         { name: "RSA Wiener Attack", component: RSA_WIENER_ATTACK },
-        { name: "Differential Analysis", component: null },
-        { name: "Linear Cryptanalysis", component: null },
-        { name: "Boomerang Attack", component: null },
+        { name: "Differential Analysis", component: DIFFERENTIAL_CRYPTANALYSIS },
+        { name: "Linear Cryptanalysis", component: LINEAR_CRYPTANALYSIS },
+        { name: "Boomerang Attack", component: BOOMERANG_ATTACK },
+        { name: "Brute Force Attack", component: BRUTE_FORCE_ATTACK },
+        { name: "Adaptive Chosen-Plaintext Attack", component: ADAPTIVE_CHOSEN_PLAINTEXT_ATTACK },
+        { name: "Birthday Attack", component: BIRTHDAY_ATTACK },
+        { name: "Black Bag Cryptanalysis", component: BLACK_BAG_CRYPTANALYSIS },
+        { name: "Ciphertext-Only Analysis", component: CIPHERTEXT_ONLY_ANALYSIS },
+        { name: "Chosen-Plaintext Analysis", component: CHOSEN_PLAINTEXT_ANALYSIS },
+        { name: "Davies' Attack", component: DAVIES_ATTACK },
+        { name: "Harvest now, Decrypt later", component: HARVEST_NOW_DECRYPT_LATER },
+        { name: "Integral Cryptanalysis", component: INTEGRAL_CRYPTANALYSIS },
+        { name: "Known Plaintext Attack", component: KNOWN_PLAINTEXT_ATTACK },
+        { name: "Man-in-the-middle Attack", component: MAN_IN_THE_MIDDLE_ATTACK },
+        { name: "Mod N Cryptanalysis", component: MOD_N_CRYPTANALYSIS },
+        { name: "Power Analysis", component: POWER_ANALYSIS },
+        { name: "Rainbow Table Attack", component: RAINBOW_TABLE_ATTACK },
+        { name: "Replay Attack", component: REPLAY_ATTACK },
+        { name: "Related-Key Attack", component: RELATED_KEY_ATTACK },
+        { name: "Rubber-Hose Cryptanalysis", component: RUBBER_HOSE_CRYPTANALYSIS },
+        { name: "Side-Channel Attack", component: SIDE_CHANNEL_ATTACK },
+        { name: "Slide Attack", component: SLIDE_ATTACK },
+        { name: "Timing Analysis Attack", component: TIMING_ANALYSIS_ATTACK },
+        { name: "eXtended Sparse Linearization Attack", component: XSL_ATTACK },
       ]
     },
     {
