@@ -220,44 +220,4 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-
-  .result-block textarea {
-    width: 100%;
-    height: 120px;
-    font-family: monospace;
-    font-size: 0.85rem;
-    padding: 0.5rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    background: #f8fafc;
-    color: #334155;
-    margin-top: 0.5rem;
-  }
-
-  .private-key {
-    background: #fff1f2 !important;
-    border-color: #fecdd3 !important;
-  }
-
-  .result-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-
-  .result-header label {
-    font-weight: bold;
-    color: #334155;
-    font-size: 0.9rem;
-  }
-
-  .link-btn {
-    background: none;
-    border: none;
-    color: #2563eb;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 0.85rem;
-    padding: 0;
-  }
 </style>

@@ -133,15 +133,6 @@
   .home-btn:hover h2 { color: #93c5fd; }
   .home-btn:active { transform: scale(0.98); }
 
-  .header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    margin-bottom: 1rem;
-    gap: 0.5rem;
-  }
-
   .terminal-btn {
     background: #0f172a;
     border: 1px solid #334155;

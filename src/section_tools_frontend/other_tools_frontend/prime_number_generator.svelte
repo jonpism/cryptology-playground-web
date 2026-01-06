@@ -163,21 +163,4 @@
       overflow-y: auto;
       padding-right: 5px;
   }
-
-  .prime-item input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #e2e8f0;
-      background: #f8fafc;
-      border-radius: 4px;
-      font-family: monospace;
-      color: #334155;
-      font-size: 0.9rem;
-  }
-
-  .prime-item input:focus {
-      outline: none;
-      border-color: #3b82f6;
-      background: #fff;
-  }
 </style>

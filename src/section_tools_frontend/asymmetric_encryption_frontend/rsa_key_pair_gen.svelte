@@ -8,8 +8,8 @@
   
   import { generateRSAKeyPair } from '../../section_tools_js/asymmetric_encryption_js/rsa_key_pair_gen.js';
 
-  let keySize = 2048; // default standard
-  
+  let keySize = 2048; 
+  let keyFormat = 'pgp'; 
   let privateKeyResult = "";
   let publicKeyResult = "";
   let error = "";
@@ -21,10 +21,16 @@
     { value: 4096, label: "4096 bit (High Security - Slow)" }
   ];
 
-  // prepare zip
+  const formatOptions = [
+    { value: 'pgp', label: "PGP Format (.asc) - Best for Email/File Tools" },
+    { value: 'pem', label: "PEM Format (.pem) - Raw RSA/SSL/SSH" }
+  ];
+
+  $: ext = keyFormat === 'pgp' ? 'asc' : 'pem';
+
   $: zipData = privateKeyResult ? [
-      { name: "private.pem", content: privateKeyResult },
-      { name: "public.pem", content: publicKeyResult }
+      { name: `private_key.${ext}`, content: privateKeyResult },
+      { name: `public_key.${ext}`, content: publicKeyResult }
   ] : [];
 
   async function handleGenerate() {
@@ -33,10 +39,9 @@
     privateKeyResult = "";
     publicKeyResult = "";
 
-    // small timeout to allow UI to update "Generating..." state
     setTimeout(async () => {
         try {
-            const keys = await generateRSAKeyPair(keySize);
+            const keys = await generateRSAKeyPair(keySize, keyFormat);
             privateKeyResult = keys.privateKey;
             publicKeyResult = keys.publicKey;
         } catch (e) {
@@ -49,20 +54,28 @@
 
   const rsaLinks = [
     { text: "Wikipedia: RSA (Cryptosystem)", url: "https://en.wikipedia.org/wiki/RSA_(cryptosystem)" },
-    { text: "RFC 8017: PKCS #1 v2.2", url: "https://datatracker.ietf.org/doc/html/rfc8017" }
+    { text: "RFC 8017: PKCS #1 v2.2", url: "https://datatracker.ietf.org/doc/html/rfc8017" },
+    {text: "Acrobat (.asc files)", url: "https://www.adobe.com/acrobat/resources/document-files/asc-file.html"}
   ];
 </script>
 
 <ToolCard title="RSA Key Pair Generator">
   
-  <div class="controls-row">
-    <Select 
-      label="Key Size (Bits):" 
-      bind:value={keySize} 
-      options={sizeOptions} 
-    />
+  <div class="controls-container">
+    <div class="row">
+      <Select 
+        label="Key Size:" 
+        bind:value={keySize} 
+        options={sizeOptions} 
+      />
+      <Select 
+        label="Output Format:" 
+        bind:value={keyFormat} 
+        options={formatOptions} 
+      />
+    </div>
     
-    <div style="align-self: flex-end; margin-bottom: 20px;">
+    <div class="action-row">
        <Button on:click={handleGenerate} disabled={isGenerating}>
          {#if isGenerating}Generating Keys...{:else}Generate Key Pair{/if}
        </Button>
@@ -83,7 +96,7 @@
             expandable={true} 
             withCopy={true}
             withDownload={true}
-            downloadName="private.pem"
+            downloadName={`private_key.${ext}`}
             rows={6}
         />
 
@@ -94,14 +107,14 @@
             expandable={true} 
             withCopy={true}
             withDownload={true}
-            downloadName="public.pem"
+            downloadName={`public_key.${ext}`}
             rows={6}
         />
 
         <div class="download-container">
             <DownloadZipButton 
                data={zipData} 
-               zipName="rsa_keys.zip" 
+               zipName={`rsa_keys_${ext}.zip`} 
                label="Download Key Pair (.zip)" 
             />
         </div>
@@ -110,24 +123,38 @@
 
 </ToolCard>
 
-<Info title="About RSA Keys" links={rsaLinks}>
+<Info title="About RSA Key Pair Generator" links={rsaLinks}>
   <p>
-    <strong>RSA Keys</strong> are the foundation of internet security (SSL/TLS, SSH).
+    <strong>Which format should I choose?</strong>
   </p>
-
   <ul>
-    <li><strong>1024 bit:</strong> Fast, but considered weak by modern standards. Avoid for sensitive data.</li>
-    <li><strong>2048 bit:</strong> The current industry standard. Good balance of security and performance.</li>
-    <li><strong>4096 bit:</strong> Extremely secure, but significantly slower to generate and use. Used for top-secret data or root certificates.</li>
+    <li><strong>PGP (.asc):</strong> Choose this if you want to use these keys with the <em>PGP Encryption Tool</em> on this site, or with software like GPG, ProtonMail, or Kleopatra.</li>
+    <li><strong>PEM (.pem):</strong> Choose this for raw cryptographic operations, SSL certificates, or older SSH keys. This is the "naked" RSA key data.</li>
   </ul>
 </Info>
 
 <style>
-  .controls-row {
+  .controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .row {
     display: flex;
     gap: 1rem;
-    align-items: center;
-    max-width: 500px;
+    flex-wrap: wrap;
+  }
+
+  .row :global(div) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .action-row {
+    display: flex;
+    justify-content: center;
   }
 
   .results-area {

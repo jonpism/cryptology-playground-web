@@ -2,11 +2,13 @@
   export let label = "";
   export let value = "";
   export let options = [];
+
+  export let id = "select-" + Math.random().toString(36).slice(2);
 </script>
 
 <div class="input-group">
   {#if label} 
-    <label>{label}</label> 
+    <label for={id}>{label}</label> 
   {/if}
   
   <select bind:value on:change>

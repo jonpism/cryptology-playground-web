@@ -1,5 +1,5 @@
 <script>
-	import BruteForceAttack from './section_tools_frontend/cryptanalysis_frontend/brute_force_attack.svelte';
+	import Pgp from './section_tools_frontend/file_handling_frontend/pgp.svelte';
   // COMPONENTS
   import Sidebar from './components/Sidebar.svelte';
   import Home from './section_tools_frontend/HomePage.svelte';
@@ -31,6 +31,7 @@
   import FILE_HASH_GENERATOR from './section_tools_frontend/file_handling_frontend/file_hash_generator.svelte';
   import FILE_TYPE_DETECTOR from './section_tools_frontend/file_handling_frontend/file_type_detector.svelte';
   import LOG_ANALYZER from './section_tools_frontend/file_handling_frontend/log_analyzer.svelte';
+  import PGP from './section_tools_frontend/file_handling_frontend/pgp.svelte';
 
   // CONVERTERS TOOLS
   import BINARY_CONVERTER from './section_tools_frontend/converters_frontend/binary_converter.svelte';
@@ -197,6 +198,7 @@
         { name: "Compare File Hashes", component: COMPARE_HASHES },
         { name: "File Type Detector", component: FILE_TYPE_DETECTOR },
         { name: "Log File Analyzer", component: LOG_ANALYZER },
+        { name: "Pretty Good Privacy (PGP)", component: PGP },
       ]
     },
     {
