@@ -32,6 +32,7 @@
   import FILE_TYPE_DETECTOR from './section_tools_frontend/file_handling_frontend/file_type_detector.svelte';
   import LOG_ANALYZER from './section_tools_frontend/file_handling_frontend/log_analyzer.svelte';
   import PGP from './section_tools_frontend/file_handling_frontend/pgp.svelte';
+  import COMPARE_HASHES from './section_tools_frontend/file_handling_frontend/compare_hashes.svelte';
 
   // CONVERTERS TOOLS
   import BINARY_CONVERTER from './section_tools_frontend/converters_frontend/binary_converter.svelte';
@@ -112,7 +113,7 @@
   import ENTROPY from './section_tools_frontend/other_tools_frontend/entropy.svelte';
   import INT_FACTORIZATION from './section_tools_frontend/other_tools_frontend/int_factorization.svelte';
   import XOR_OPERATION from './section_tools_frontend/other_tools_frontend/xor_operation.svelte';
-  import COMPARE_HASHES from './section_tools_frontend/file_handling_frontend/compare_hashes.svelte';
+  import QR_CODE_GENERATOR from './section_tools_frontend/other_tools_frontend/qr_code_gen.svelte';
 
   let menuStructure = [
     {
@@ -268,6 +269,7 @@
         { name: "Entropy", component: ENTROPY },
         { name: "Integer Factorization", component: INT_FACTORIZATION },
         { name: "XOR operation", component: XOR_OPERATION },
+        { name: "QR Code Generator", component: QR_CODE_GENERATOR },
       ]
     }
   ];
