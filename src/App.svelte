@@ -18,6 +18,7 @@
   import AES from './section_tools_frontend/symmetric_encryption_frontend/aes.svelte';
   import DES from './section_tools_frontend/symmetric_encryption_frontend/des.svelte';
   import TRIPLE_DES from './section_tools_frontend/symmetric_encryption_frontend/triple_des.svelte';
+  import FERNET from './section_tools_frontend/symmetric_encryption_frontend/fernet_encryption.svelte';
 
   // CIPHERS
   import CAESAR_CIPHER from './section_tools_frontend/ciphers_frontend/caesar_cipher.svelte';
@@ -138,6 +139,7 @@
         { name: "AES", component: AES },
         { name: "DES", component: DES },
         { name: "Triple DES", component: TRIPLE_DES },
+        { name: "Fernet", component: FERNET },
       ]
     },
     {
