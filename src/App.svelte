@@ -115,6 +115,7 @@
   import INT_FACTORIZATION from './section_tools_frontend/other_tools_frontend/int_factorization.svelte';
   import XOR_OPERATION from './section_tools_frontend/other_tools_frontend/xor_operation.svelte';
   import QR_CODE_GENERATOR from './section_tools_frontend/other_tools_frontend/qr_code_gen.svelte';
+  import LOREM_IPSUM_GENERATOR from './section_tools_frontend/other_tools_frontend/lorem_ipsum_gen.svelte';
 
   let menuStructure = [
     {
@@ -272,6 +273,7 @@
         { name: "Integer Factorization", component: INT_FACTORIZATION },
         { name: "XOR operation", component: XOR_OPERATION },
         { name: "QR Code Generator", component: QR_CODE_GENERATOR },
+        { name: "Lorem Ipsum Generator", component: LOREM_IPSUM_GENERATOR },
       ]
     }
   ];
