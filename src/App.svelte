@@ -116,6 +116,7 @@
   import XOR_OPERATION from './section_tools_frontend/other_tools_frontend/xor_operation.svelte';
   import QR_CODE_GENERATOR from './section_tools_frontend/other_tools_frontend/qr_code_gen.svelte';
   import LOREM_IPSUM_GENERATOR from './section_tools_frontend/other_tools_frontend/lorem_ipsum_gen.svelte';
+  import MOD_CALCULATOR from './section_tools_frontend/other_tools_frontend/mod_calc.svelte';
 
   let menuStructure = [
     {
@@ -274,6 +275,7 @@
         { name: "XOR operation", component: XOR_OPERATION },
         { name: "QR Code Generator", component: QR_CODE_GENERATOR },
         { name: "Lorem Ipsum Generator", component: LOREM_IPSUM_GENERATOR },
+        { name: "Mod Calculator", component: MOD_CALCULATOR }
       ]
     }
   ];
